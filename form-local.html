@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        form input[type=text] {
+            width: 200px;
+        }
+
+        form span {
+            /* padding-right: 30px; */
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function () {
+                var objCha = {}
+                var objCha = JSON.parse(localStorage.getItem("objCha"));
+                var getUser = $("input.username").val()
+                var getEmail = $("input.email").val()
+               
+              
+                if (objCha == null) {
+                    objCha = {};
+                }
+
+                objCha[getUser] = {
+                    username: getUser,
+                    email: getEmail
+                }
+                
+                localStorage.setItem("objCha", JSON.stringify(objCha));
+                console.log(objCha)
+
+                return false
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <form action="">
+        <span>username
+        </span>
+        <input type="text" value="" name="" class="username"><br>
+        <span>email</span>
+        <input type="text" value="" name="" class="email">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

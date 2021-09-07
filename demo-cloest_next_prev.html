@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('li.content-detailb').closest('ul').css('color','red')
+            // $('li.content-detailb').next().css('color','yellow')
+            // $('li.content-detailb').prev().css('color','blue')
+            $('li.content-detaila').click(function(){
+              
+               var b= $('li.content-detaila').closest("ul")
+            //    var c= b.find('li.content-detailb').text()
+                var c= b.find('li.content-detailb')
+                var d =c.find("input").val()
+                var e= c.find("img").attr("src");
+              console.log(e)
+               
+            })
+          
+        })
+    </script>
+</head>
+<body>
+   <div class="content-main">
+    <ul class="content1">
+        <li>content-detail1</li>
+        <li>content-detail2</li>
+        <li>content-detail3</li>
+        <li>content-detail4</li>
+    </ul>
+    <ul class="content2">
+        <li class="content-detaila">content-detaila</li>
+        <li class="content-detailb">content-detailb
+            <input type="text" value="" name="">
+            <img src="http://" alt="">
+        </li>
+        
+        <li>content-detailc</li>
+        <li>content-detaild</li>
+    </ul>
+   </div>
+</body>
+</html>

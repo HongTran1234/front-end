@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * { 
+  display: block;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  
+  // class, id, src: goi la thuoc tinh
+  // xxx1, xxx2, abc.png: gia tri cua thuoc tinh 
+
+  // attr co 2 kieu
+  // - attr su dung 1 tham so: thi dung de lay gia tri cua thuoc tinh 
+  // - attr: su dung 2 tham so: dung thay doi gia tri cua thuoc tinh 
+
+  // var get = $("img").attr("src")
+
+  // console.log(get);
+  // var demo = "https://cdn.24h.com.vn/upload/2-2021/images/2021-05-05///adt1620180251-180530171302079597480598690959056503.jpg";
+
+
+  // $("img").attr("src", demo)
+ 
+  // - lay src cua img1  set vao src cua img2
+  $("p").click(function(){
+    var get = $("img.img1").attr("src")
+    
+    $("img.img2").attr("src", get)
+
+  })
+});
+</script>
+</head>
+
+<body>
+   
+  <p class="xxx1" id="xxx2">demo</p>
+  <img class="img1" src="https://cdn.24h.com.vn/upload/2-2021/images/2021-05-05//1620176968-370-thumbnail-width640height480.jpg">
+
+  <img class="img2" src="https://cdn.24h.com.vn/upload/2-2021/images/2021-05-05///adt1620180251-180530171302079597480598690959056503.jpg">
+
+</body>
+
+</html>

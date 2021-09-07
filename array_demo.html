@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style type="text/css">
+     p {
+      background-color: red;
+     }
+   </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            // array 1 la bien chua nhieu gia tri
+
+            // cach tao array = rong
+            var demo1 = [];
+
+            // them value vao array
+            demo1.push("iphone")
+            demo1.push("samsung")
+            demo1.push("nokia")
+
+            // console.log(demo1)
+
+            // key: value
+            // 0: "iphone"
+            // 1: "samsung"
+            // 2: "nokia"
+            // length: 3
+
+            // key: tu dong tao ra, bat dau =0 va tang len 
+
+            // length: do dai cua array, co bao nhieu phan tu trong mang
+            // lay do dai cua mang
+            // console.log(demo1.length);
+
+            // vdu kiem tra array co gia phan tu nao k?
+            // if(demo1.length > 0){...}
+
+
+            // console.log(demo1);
+
+            // cu phap lay value ra: ten-array[key]
+            // console.log(demo1[2])
+
+            // 1-10: 1-9>
+            // i = 1: bien chua gia tri ban dau
+            // i < Things.length: dieu kien de vong lap dung lai
+            // i++: moi lan chay thi gia tri se tang len 1 don vi
+            // for (var i = 1; i < 10; i++) {
+            //     console.log(i)
+            // }
+
+            for (var i = 0; i < demo1.length; i++) {
+                // console.log(demo1[i])
+                // =>demo[0]
+                // demo[1]
+                // demo[2]
+            }
+
+            // vong lap MAP = for 
+
+            demo1.map(function(value, key){
+                // console.log(value)
+            })
+
+
+        // object = array: mo rong hon
+
+        var demo2 = {}
+
+            // them value vao object 2cach
+            demo2['email'] = "xxx@xxx.xx"
+            demo2.pass = 123;
+
+            // console.log(Object.keys(demo2).length)
+            
+            // key: value
+            // email: "xxx@xxx.xx"
+            // pass: 123
+
+            // key: do minh tao ra, co the number or string
+            // value: number, string, array/object(object 2 chieu, long nhau, da cap)
+
+
+            // lay array lam value cua object
+            demo2['arr'] = demo1;
+
+            // cu phap lay ra neu obj co nhieu key: ten-obj[key][key][key][key]
+            // console.log(demo2['arr'][2]);
+
+            // lay object lam value cua object
+            var objCon = {}
+                objCon['phone'] = 121213
+                objCon["add"] = "da nang"         
+
+
+            demo2['obj'] = objCon;
+
+
+            // console.log(demo2)
+
+            // console.log(demo2['obj']['phone'])
+
+            //lay het value ra
+            Object.keys(demo2).map(function(key, index){
+                // console.log(key) key: key cha trpng object 
+                // console.log(index) : so chi muc cua key 
+                console.log(demo2[key])
+                    // => demo2['email']
+                    // => demo2['pass']
+                    // => demo2 ['arr']
+                    // ...['obj']
+
+            })
+
+        });
+    </script>
+     
+</head>
+<body>
+   
+    
+
+</body>
+</html>

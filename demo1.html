@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    p {
+        background-color: red;
+    }
+    
+</style>
+<!-- - goi thu js vao
++ goi truc tiep tu tragn chu
++ down ve may va goi vao tuong tu css -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+   
+   // - trc het cho action dung lai.
+   // - sau do tim cach lay gia tri nhap vao
+   // - kiem tra xem gia tri co chua?
+   //  + neu co thi cho action chay 
+   //  + chua co thi bao loi
+   // submit: chi dc dung cho form thoi
+   $("form").submit(function(){
+
+        var getEmail = $("input.email").val()
+        var getPass = $("input.pass").val()
+        var getSelect = $("select#cars").val();
+
+        //lay value cua the da dc check
+        var getRadio = $('input[name="gender"]:checked').val();
+
+        
+        // xxxx@xxx.xx(ten mien cua moi quoc gia) 
+        // xxx@xxx.vn 
+        // .com
+        // jp
+        // .us 
+
+        var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        
+        // console.log(testEmail.test(getEmail));
+
+        var demo = 1;
+
+        $("p.error_e").text("")
+        $("p.error_p").text("")
+        $("p.error_s").text("")
+        $("p.error_r").text("")
+
+        if(getEmail==""){
+            demo = 2;
+            $("p.error_e").text("vui long nhap email")
+        } else{
+          // if (testEmail.test(getEmail)==false)
+          if (!testEmail.test(getEmail)) {
+            demo = 2;
+            $("p.error_e").text("vui long nhap dung dinh dang email")
+          }
+        }
+
+        if(getPass==""){
+            demo = 2;
+            $("p.error_p").text("vui long nhap pass")
+        } 
+
+        if(getSelect==""){
+            demo = 2;
+            $("p.error_s").text("vui long chon")
+        } 
+        if(getRadio==undefined) {
+          demo = 2;
+            $("p.error_r").text("vui long chon radio")
+        }
+        // console.log(demo)
+
+        if(demo==1){
+            return true;
+        }
+
+
+        //cho dung o cuoi cung
+        return false;
+   })
+});
+</script>
+
+
+</head>
+<body>
+
+   <!-- action : chuyen data toi trang tiep theo -->
+   <form action="https://www.24h.com.vn/">
+       
+        <input type="text" name="" value="" class="email">
+        <p class="error_e"></p>
+
+        <input type="text" name="" value="" class="pass">
+        <p class="error_p"></p>
+
+        <select name="cars" id="cars">
+          <option value="">Vui long chon</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+        <p class="error_s"></p>
+
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+        <p class="error_r"></p>
+
+        <button type="submit">SEND</button>
+
+   </form>
+
+  <!--   input type: text, radio,  checkbox
+    textarea:
+    select option: -->
+   
+
+
+</body>
+</html>

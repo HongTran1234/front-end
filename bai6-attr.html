@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .img-all{
+            display: block;
+            width: 100%;
+        }
+        .list-img{
+            width: 100%;
+            display: inline-block;
+            /* height:180px;
+            overflow: auto;
+            white-space: nowrap; */
+        /* }
+        .list-img img{
+            width: 100%;
+        }
+        .list-img img{
+            float: left;
+            width: 20%;
+            
+        } */ 
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+      background-color: red;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        //  $(".list-img img").click(function(){
+        //     var i= $(this).attr("src")
+        //     $("img.img-main").attr("src",i)
+        // }) 
+        // $("a").click(function(){
+        //     var getID = $(this).attr("id");
+        //     $('span.' + getID).addClass('test');
+        //     console.log(getID)
+        // });
+    
+     $("li").click(function(){  
+            var i = $(this).attr("id");
+            $('div.hide').removeClass('show');  
+            $('div.hide.' + i).addClass('show');      
+        });
+    });
+    </script>
+     
+</head>
+<body>
+    <!-- <div class="img-all">
+        <img class="img-main" src="https://cf.shopee.vn/file/f79decea0db7141bbd7812f533c6fe2b")" alt="">
+        <div class="list-img">
+            <img class="img-n" src="https://cf.shopee.vn/file/de3b157cc13259cf0debae0e3a7a87a3" alt="">
+            <img  class="img-n" src="https://cf.shopee.vn/file/0e91b9ea3774152433a7a0505a67ac01" alt="">
+            <img  class="img-n"src="https://cf.shopee.vn/file/de3b157cc13259cf0debae0e3a7a87a3" alt="">
+            <img  class="img-n" src="https://cf.shopee.vn/file/de3b157cc13259cf0debae0e3a7a87a3" alt="">
+            <img  class="img-n" src="https://cf.shopee.vn/file/0e91b9ea3774152433a7a0505a67ac01" alt="">
+            
+        </div> -->
+    <!-- </div> -->
+    <!-- <a id="demo">Click on this paragraph</a>
+    <span class="demo">Click on this paragraph</span> -->
+    <div class="demo">
+        <ul >
+          <li id="hi">tin tuc</li>
+          <li id="hii">bong da</li>
+          <li id="hiii" >thoi trang</li>
+        </ul>
+    
+        <div class="content">
+          <div class=" hide hi">
+            tin tuc
+          </div>
+          <div class="hide hii">
+            bong da
+          </div>
+          <div class=" hide hiii">
+            thoi trang
+          </div>
+        </div>
+      </div>
+</body>
+</html>

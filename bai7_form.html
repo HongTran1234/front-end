@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+    p {
+        background-color: red;
+    }
+    
+</style>
+<!-- - goi thu js vao
++ goi truc tiep tu tragn chu
++ down ve may va goi vao tuong tu css -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+   
+   // - trc het cho action dung lai.
+   // - sau do tim cach lay gia tri nhap vao
+   // - kiem tra xem gia tri co chua?
+   //  + neu co thi cho action chay 
+   //  + chua co thi bao loi
+   // submit: chi dc dung cho form thoi
+   $("form").submit(function(){
+
+        var getEmail = $("input.email").val()
+        var getPass = $("input.pass").val()
+
+        if(getEmail==""){
+            $("p.error_e").text("vui long nhap email")
+        } else {
+            $("p.error_e").text("")
+        }
+
+        if(getPass==""){
+            $("p.error_p").text("vui long nhap pass")
+        } else {
+            $("p.error_p").text("")
+        }
+
+
+        if(getEmail!="" && getPass != ""){
+            return true;
+        }
+
+
+        //cho dung o cuoi cung
+        return false;
+   })
+});
+</script>
+
+
+</head>
+<body>
+
+   <!-- action : chuyen data toi trang tiep theo -->
+   <form action="https://www.24h.com.vn/">
+       
+        <input type="text" name="" value="" class="email">
+        <p class="error_e"></p>
+
+        <input type="text" name="" value="" class="pass">
+        <p class="error_p"></p>
+
+
+        <button type="submit">SEND</button>
+
+   </form>
+
+    
+   
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ 
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      var demo1=[]
+      demo1.push("Hong")
+      demo1.push("Tran")
+      demo1.push("Thi")
+      // console.log(demo1[1])
+    //   for(i=0;i<demo1.length;i++)
+    //   {
+    //     console.log(demo1[i])
+    //   }
+      // demo1.map(function(value, key){
+      // console.log(value)
+      // })
+      var adress={}
+      adress['provice']='Quang Tri'
+      adress['District']='Gio Linh'
+      adress['Commune']='Gio Châu'
+
+    var date={}
+     date['day']=27
+     date['month']=2
+     date['year']=1999
+     date['name']=demo1
+     date['adr']=adress
+      // console.log(date['name'][2]);
+     
+    //  Object.keys(date).map(function(key, index){
+    //    console.log(date['name'][2])
+    //    console.log(date['adr']['provice'])
+    //    console.log(date[key])
+    // })
+    var sum={}
+    sum['h1']='HongTran'
+    sum['h2']='TranHong'
+    sum['h3']=date
+    Object.keys(sum).map(function(key,index){
+      // console.log(sum[key])
+      console.log(sum['h3']['adr']['provice'])
+    })
+  })
+</script>
+</head>
+
+<body>
+    
+</body>
+</html>

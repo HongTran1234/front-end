@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+    list-style: none;
+    color: white;
+    margin: 0;
+}
+.list{
+   
+    width: 200px;
+}
+.list li{
+    background-color: black;
+    padding: 5px 0;
+    border: 1px solid white;
+} 
+.list li ul{
+    border: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("li").find(".detail").hide();
+        $("li").click(function(){ 
+            var b = $(this).hasClass("hi");
+            if(b){
+                $("li").find(".detail").hide();
+                $(this).removeClass("hi")     
+            }else{
+                $("li").removeClass("hi")
+                $("li").find(".detail").hide();
+                $(this).find("ul").show()
+                $(this).addClass("hi") 
+                }
+            })     
+    })
+</script>
+</head>
+
+<body>
+    <ul class="list">
+        <li >
+            <span>Tin tức</span>
+            <ul class="detail">
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+            </ul>
+        </li>
+        <li >
+            <span>Bóng đá</span>
+            <ul class="detail">
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+            </ul>
+        </li>
+        <li >
+            <span>Thể thao</span>
+            <ul class="detail">
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+            </ul>
+        </li>
+        <li>
+            <span>Pháp luật</span>
+            <ul class="detail">
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+            </ul>
+        </li>
+        <li >
+            <span>Video</span>
+            <ul class="detail">
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+                <li>Tin tức</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

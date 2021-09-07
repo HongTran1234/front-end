@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- goi file css -->
+    <!-- goi js -->
+
+    <style type="text/css">
+         background: green;
+        }
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+           
+
+            objCha = {
+                'bao1': {
+                    'username': 'bao1111',
+                    'email': 'aa@gmail.com'
+                },
+                'bao2': {
+                    'username': 'bao2222',
+                    'email': 'aa@gmail.com'
+                },
+                'bao3': {
+                    'username': 'bao111d1',
+                    'email': 'ada@gmail.com'
+                },
+            }
+            
+        
+            var html = '';
+
+            Object.keys(objCha).map((key, value) => {
+                // html += "<p>" +
+                //                 "<a>" + objCha[key]['username'] + "</a>" +
+                //             "</p>";
+                // html += "<p>" +
+                //             "<a>" + objCha[key]['username'] + "</a>" +
+                //         "</p>";
+                
+                html += "<tr>" +
+                            "<td>" + objCha[key]['username'] + "</td>" +
+                            "<td>" + objCha[key]['email'] + " </td>" +
+                        "</tr>";
+               
+            })
+            console.log(html)
+
+            $("table tbody").append(html);
+           
+    });
+    </script>
+</head>
+<body>
+
+
+   <!--  <div>
+        
+    </div> -->
+
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+            </tr>   
+        </thead>
+        <tbody>
+             
+
+			
+        </tbody>
+    </table>
+    
+    
+</body>
+</html>

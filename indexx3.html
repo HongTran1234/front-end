@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ 
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+     var getInfo=localStorage.getItem("Infomation")
+      // console.log(getInfo)
+      if(getInfo){
+         infoma= JSON.parse(getInfo);
+        console.log(getInfo)
+        
+      }
+      var key= 'info'
+      delete infoma[key];
+      console.log(infoma);
+      localStorage.setItem("Infomation",JSON.stringify(infoma))
+    })
+</script>
+</head>
+
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ form input[type=text]{
+     width: 200px;
+ }
+ form span{
+     /* padding-right: 30px; */
+ }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var jCha=localStorage.getItem("objCha")
+      // console.log(getInfo)
+      if(jCha){  
+        objCha= JSON.parse(jCha);
+        console.log(objCha)
+      }
+    var html = '';
+
+    Object.keys(objCha).map((key, value) => {
+  
+    html += "<tr>" +
+                "<td>" + objCha[key]['username'] + "</td>" +
+                "<td>" + objCha[key]['email'] + " </td>" +
+            "</tr>";
+   
+    })
+    // console.log(html)
+
+$("table tbody").append(html);
+      
+    })
+</script>
+</head>
+
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+            </tr>   
+        </thead>
+        <tbody>
+             
+
+			
+        </tbody>
+    </table>
+</body>
+</html>

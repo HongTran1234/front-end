@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .form-main{
+      margin: 0 auto;
+      width: 500px;
+      border: 2px solid #78b43d;
+    }
+    .titl{
+      text-align: center;
+      background-color:#78b43d;
+      padding: 10px 0;
+      margin-top: 0;
+    }
+    form{
+      text-align: center;
+    }
+    input[type=text]{
+      width: 300px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+}
+  input[type=textarea]{
+    width: 300px;
+    height:200px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+  }
+  .send{
+    background-color: #78b43d;
+    padding:  5px 10px;
+    margin-bottom: 10px;
+  }
+  .cancel{
+    background-color: gray;
+    padding:  5px 10px;
+    margin-bottom: 10px;
+  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+        $("form#up").submit(function(){
+          var n = $("input.name").val()
+          var e = $("input.email").val()
+          var p = $("input.phone").val()
+          var a = $("input.adress").val()
+          var t = $("input.title").val()
+          var c = $("input.content").val()
+          $("p.error_n").text("")
+          $("p.error_e").text("")
+          $("p.error_p").text("")
+          $("p.error_a").text("")
+          $("p.error_t").text("")
+          $("p.error_c").text("")
+          var demo=1;
+       if(n==""){
+        $("p.error_n").text("Vui long nhap day du")
+        demo=2;
+       }
+
+       if(e==""){
+        $("p.error_e").text("Vui long nhap day du")
+        demo=2;
+       }
+       if(p==""){
+        $("p.error_p").text("Vui long nhap day du")
+        demo=2;
+       }
+
+       if(a==""){
+        demo=2;
+        $("p.error_a").text("Vui long nhap day du")
+       }
+  
+       if(t==""){
+        demo=2;
+        $("p.error_t").text("Vui long nhap day du")
+       }
+       if(c==""){
+        demo=2;
+        $("p.error_c").text("Vui long nhap day du")
+       }
+       if(demo==1){
+         return true;
+       }
+       return false;
+      });
+    });
+</script>
+</head>
+<body>
+  <div class="form-main">
+  <p class="titl">GÓP Ý- LIÊN HỆ 24H</p>
+  <form action="https://www.24h.com.vn/">
+    <label for="">Họ và tên</label>
+    <input type="text" value="" name="" class="name"><br>
+    <p class="error_n"></p>
+    <label for="">Địa chỉ email</label>
+    <input type="text" value="" name="" class="email"><br>
+    <p class="error_e"></p>
+    <label for="">Số thiện thoại</label>
+    <input type="text" value="" name="" class="phone"><br>
+    <p class="error_p"></p>
+    <label for="">Địa chỉ nơi cư trú</label>
+    <input type="text" value="" name="" class="adress"><br>
+    <p class="error_a"></p>
+    <label for="">Tiêu đề</label>
+    <input type="text" value="Góp ý 24h" name="" class="title"><br>
+    <p class="error_t"></p>
+    <label for="">Nội dung</label>
+    <input type="textarea" value="" name="" class="content"><br>
+    <p class="error_c"></p>
+    <button type="submit" class="send">GỬI</button>
+    <button type="submit" class="cancel">THOÁT</button>
+
+  </form>
+  </div>
+</body>
+</html>
